@@ -6,7 +6,6 @@ import Home from './components/HomePage.jsx'
 import Diary from './components/Diary.jsx'
 import NavBar from './components/navbar.jsx';
 import Van from './components/Van.jsx'
-import Background from './components/Background.jsx';
 import Travels from './components/Travels.jsx'
 import Adventure from './components/Adventure'
 import Contacts from './components/Contacts.jsx'
@@ -33,8 +32,8 @@ function App() {
   return (
 
       <div className="App">
-        <Background/>
 
+        {/* Navigation bar */}
         { location.pathname === "/home" ? 
             <div id="homeNav">
               <NavBar id="navbar-home"/>
@@ -47,6 +46,7 @@ function App() {
             </div>
         }
 
+        {/* Rest of the page */}
         <Routes>
           <Route path="/" element={<Navigate to="home"/>}/>
           <Route path="/diary" element={<Diary/>}/>
@@ -56,11 +56,8 @@ function App() {
           <Route path='/questions' element={<Questions/>}/>
           <Route path='/contacts' element={<Contacts/>}/>
           <Route path='/map' element={<Map/>}/>
-
-
           {/* Adventure routes */}
-          {
-            createTravelRoutes()
+          {createTravelRoutes()
           }
         </Routes>
       </div>

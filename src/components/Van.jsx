@@ -3,7 +3,6 @@ import { useEffect } from "react"
 import '../style/Van.css'
 import vanInfo from '../data/vanInfo.js'
 
-import backgroundChanger from '../tools/BackgroundHandler.js'
 import bgImage  from '../assets/van_bg.jpg'
 import vanImg from '../assets/uaz.png'
 import DiagramButton from "./DiagramButton"
@@ -12,7 +11,6 @@ import DiagramButton from "./DiagramButton"
 export default function Van () {
 
     useEffect( () => {
-        backgroundChanger(bgImage)
     })
 
 

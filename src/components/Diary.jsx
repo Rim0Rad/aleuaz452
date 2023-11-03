@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import '../style/Diary.css'
 
 import bgImage  from '../assets/diary_bg_croped.jpg'
-import backgroundChanger from '../tools/BackgroundHandler.js'
 
 // Will retireve this from back end
 import countries from '../data/diary.js'
@@ -11,14 +10,13 @@ export default function Diary ( ) {
 
     
     useEffect( () => {
-        // backgroundChanger(bgImage, true)
     }, [])
    
 
     const [ targetCountry, setTargetCountry ] = useState(false)
 
 
-    const handleTunisiaClick  = (e) => {
+    const handleClick  = (e) => {
         if(e.target.id === "Tunisia"){
             setTargetCountry(e.target.id)
         }
@@ -54,20 +52,19 @@ export default function Diary ( ) {
         }else {
             return (
                 <div id="contentContainer">
-                    <h2>Diaries</h2>
-                    <div id="countriesContainer">
+                    {/* <div id="countriesContainer"> */}
                         <div id="diary-countries">
-                            <div className='diary-country-container'>
+                            <div className='diary-country-container' onClick={handleClick}>
                                 <h3>Romania</h3>
                             </div>
-                            <div className='diary-country-container'>
+                            <div className='diary-country-container' onClick={handleClick}>
                                 <h3>Moldova</h3>
                             </div>
-                            <div className='diary-country-container' onClick={handleTunisiaClick}>
+                            <div className='diary-country-container' onClick={handleClick}>
                                 <h3 id="Tunisia">Tunisia</h3>
                             </div>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
             )
         }
@@ -76,8 +73,11 @@ export default function Diary ( ) {
 
     return (
         <div id="diaryPage">
-            <img src={bgImage}/>
-            { switchCountry() }                
+            <div id="diaryPageHeaderImgContainer">
+                <h2 className='diaryPageTitle'>Diaries</h2>
+                <img src={bgImage}/>
+            </div>
+            { switchCountry() }
         </div>
     )
 }

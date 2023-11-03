@@ -1,5 +1,7 @@
 .background {
-    width: 100vw;
+    /* width: 100vw; */
+
+    /* border: 2px solid green; */
 
     position: absolute;
     z-index: -10;
@@ -14,7 +16,6 @@
     background-repeat: no-repeat;
     overflow: hidden;
 
-    /* background: linear-gradient(rgb(255, 255, 255), rgb(253, 244, 244)); */
 
   }
   .backgroundImg {

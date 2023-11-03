@@ -1,0 +1,36 @@
+#homepage {
+    transition: 1s;
+    /* width: 100%; */
+    height: 100vh;
+    /* border: 10px solid black; */
+    overflow: hidden;
+}
+
+#homeTop {
+    transition: 1s;
+    /* position: absolute; */
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#homeTop > img {
+    height: 100%;
+    width: 100%;
+}
+
+
+#homeBottom {
+    transition: 1s;
+    /* position: absolute; */
+    top: 100vh;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: orangered;
+}
+

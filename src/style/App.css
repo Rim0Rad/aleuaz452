@@ -1,7 +1,3 @@
-* {
-  /* border: 1px solid white; */
-}
-
 :root {
   --navbar-height: 100px;
 
@@ -10,29 +6,24 @@
   --h3-font-size: 20px;
   --h4-font-size: 16px;
 
-  --nav-color: rgba(0, 0, 0, 0.671);
+  --nav-color: rgba(0, 0, 0, 0.863);
   --accent-color: orangered;
 }
-
 
 p, h1, h2, h3, h4 {
   color: white;
 }
-
-
 
 .App {
   width: 100%;
   height: 100%;
 }
 
-
 h1 {
   transition: 1s;
   position: absolute;
   z-index: 10;
   color: white;
-  text-shadow: 0 0 20px orangered;
 }
 h2 {
   margin-top: 150px;
@@ -41,7 +32,6 @@ h2 {
 h3 {
   transition: 1s;
   font-size: var(--h3-font-size);
-  text-shadow: 0 0 5px orangered;
 }
 
 
@@ -69,6 +59,8 @@ h3 {
   top: -4px;
   font-size: 20px;
   margin: 0px
-  
+}
 
+.black {
+  color: black;
 }

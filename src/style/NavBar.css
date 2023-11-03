@@ -12,7 +12,6 @@
     
     display: flex;
     justify-content: center;
-    align-items:self-end;
     
     background-color: var(--nav-color);
     backdrop-filter: blur(4px);
@@ -20,23 +19,22 @@
 
 #navbar-home {
     top: calc(100% - var(--navbar-height));
+
 }
 
-
-.navButton, .drowDownContainer > p, .menuDropDown > p{
+.navButton, .dropDownContainer > p, .menuDropDown > p{
     transition: .3s;
-    margin: 0px 20px;
+    margin: 20px;
 
     font-size: var(--h3-font-size);
-    text-shadow: 0 0 10px var(--accent-color);
     height: calc(var(--h3-font-size) + 12px);
 }
 
-.drowDownContainer {
+/* dropdown buttons */
+.dropDownContainer {
     padding: 0;
     margin: 0;
     min-height: var(--h3-font-size);
-
 }
 
 
@@ -48,7 +46,7 @@
     background-color: var(--nav-color);
 }
 
-.menuDropDown > p {
+.menuDropDown > p{
     font-size: var(--h4-font-size);
     margin: 10px 10px;
 }
