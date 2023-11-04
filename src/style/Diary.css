@@ -1,5 +1,5 @@
 #diaryPage {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     
     display: flex;
@@ -8,39 +8,40 @@
 
     overflow: hidden;
 
-    background: linear-gradient(rgb(0, 0, 0), rgb(255, 130, 85))
+    /* background: linear-gradient(rgb(0, 0, 0), rgb(255, 130, 85)); */
+    background-color: orangered;
 
 }
 #diaryPageHeaderImgContainer{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     
-    position: fixed;
+    /* position: fixed; */
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: start;
 
     /* padding-top:  100px; */
-    margin-top: -100px;
     background-color: black;
+    border: 20px solid rgba(105, 18, 18, 0.466);    
+
 }
 #diaryPageHeaderImgContainer > img {
-    width: 100%;
-    /* position: fixed; */
-    /* left: -20%; */
+    width: 80%;
     transform: translate(-20%);
-    border: 20px solid rgba(255, 255, 255, 0.116);    
     border-radius: 5px;
 }
 
 .diaryPageTitle {
     position: absolute;
+    z-index: 1;
     text-shadow: 0 0 10px black;
 }
 
 
 #contentContainer {
+    
     width: 1000px;
 
     display: flex;
@@ -49,18 +50,10 @@
 }
 
 
-#countriesContainer{
-    width: 100%;
-    height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-
-}
 
 #diary-countries {
-    margin: 100px;
+    margin: 20px;
     width: 60%;
 
     display: flex;
@@ -73,7 +66,7 @@
     transition: 1s;
 
     width: 90%;
-    margin: 20px;
+    margin: 10px;
 
     display: flex;
     flex-direction: column;
@@ -96,7 +89,7 @@
 
 
 
-
+ 
 
 
 
@@ -107,7 +100,7 @@
     flex-direction: column;
     align-items: center;
 
-    margin-top: 200px;
+    margin-top: 50px;
     width: 80%;
 
     border-radius: 5px;
@@ -117,17 +110,18 @@
 }
 
 #diaryEntries > h1 {
-    position: none;
+    position:inherit;
 }
 
 #diaryEntry {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
+    
     width: 80%;
-    margin: 100px;
-
+    margin: 50px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.747);
 }
 
@@ -137,16 +131,16 @@ hr {
     border-radius: 100%;
 }
 
-#diaryEntry >  p {
+#diaryText{
     width: 80%;
 }
 
 #spacetimeCotainer {
 
-    width: 70%;
+    width: 80%;
     height: 30px;
     margin-bottom: 20px;
-
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,4 +150,22 @@ hr {
 #spacetimeCotainer > p {
     font-size: 20px;
     width: max-content;
+}
+
+
+.backButton{
+    background-color: rgba(0, 0, 0, 0.753);
+    background: linear-gradient( rgb(255, 17, 0),black);
+    border: 2px solid  rgba(255, 68, 0, 0.788);
+    border-radius: 10px;
+
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    
+}
+
+.endButton{
+    margin-bottom: 100px;
 }

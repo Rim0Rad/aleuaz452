@@ -8,7 +8,7 @@ import countries from '../data/diary.js'
 
 export default function Diary ( ) {
 
-    
+    // TODO: scroll to to the botom of the header when opening diary entiries
     useEffect( () => {
     }, [])
    
@@ -17,9 +17,7 @@ export default function Diary ( ) {
 
 
     const handleClick  = (e) => {
-        if(e.target.id === "Tunisia"){
-            setTargetCountry(e.target.id)
-        }
+        setTargetCountry(e.target.id)
     }
 
     useEffect( () => {}, [targetCountry])
@@ -38,12 +36,12 @@ export default function Diary ( ) {
                     {country.diaryEntries.map( (entry) => {
                         return (
                             <div id="diaryEntry">
-                                <hr></hr>
                                 <div id="spacetimeCotainer">
                                     <p>{entry.location}</p>
-                                    <p>{entry.date}</p>
+                                    <p>{entry.datePosted}</p>
                                 </div>
-                                <p>{entry.text}</p>
+                                <hr></hr>
+                                <p id="diaryText">{entry.text}</p>
                             </div>
                         )
                     })}
@@ -54,21 +52,22 @@ export default function Diary ( ) {
                 <div id="contentContainer">
                     {/* <div id="countriesContainer"> */}
                         <div id="diary-countries">
-                            <div className='diary-country-container' onClick={handleClick}>
-                                <h3>Romania</h3>
-                            </div>
-                            <div className='diary-country-container' onClick={handleClick}>
-                                <h3>Moldova</h3>
-                            </div>
-                            <div className='diary-country-container' onClick={handleClick}>
-                                <h3 id="Tunisia">Tunisia</h3>
-                            </div>
+                            { countries.map( (country, index) => {
+                                return (
+                                    <div key={index} id={country.name} className='diary-country-container' onClick={handleClick}>
+                                        <h3>{country.name}</h3>
+                                    </div>
+                                )
+                            })}
                         </div>
-                    {/* </div> */}
                 </div>
             )
         }
             
+    }
+
+    function hanldeClick () {
+        setTargetCountry(false)
     }
 
     return (
@@ -77,7 +76,9 @@ export default function Diary ( ) {
                 <h2 className='diaryPageTitle'>Diaries</h2>
                 <img src={bgImage}/>
             </div>
+            { targetCountry && <button className="backButton" onClick={hanldeClick}>Back To Diaries</button> }
             { switchCountry() }
+            { targetCountry && <button className="backButton endButton" onClick={hanldeClick}>Scrooll To The Top</button> }
         </div>
     )
 }
