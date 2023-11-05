@@ -9,6 +9,8 @@ import countries from '../data/diary.js'
 export default function Diary ( ) {
 
     // TODO: scroll to to the botom of the header when opening diary entiries
+    // TODO: update the botom button to scroll back to the top
+    // TODO: tome down the orange bacground
     useEffect( () => {
     }, [])
    
@@ -18,6 +20,13 @@ export default function Diary ( ) {
 
     const handleClick  = (e) => {
         setTargetCountry(e.target.id)
+    }
+
+    function handleGoBack () {
+        setTargetCountry(false)
+    }
+    const handleScrollTop = () => {
+        window.scrollTo({top: "100"})
     }
 
     useEffect( () => {}, [targetCountry])
@@ -32,10 +41,13 @@ export default function Diary ( ) {
         if(country){
             return (
                 <div id="diaryEntries">
-                    <h1>{country.name}</h1>
-                    {country.diaryEntries.map( (entry) => {
+                        <h1>{country.name}</h1>
+                    <div id="diaryHeader">
+                        { targetCountry && <button className="backButton" onClick={handleGoBack}>Back To Diaries</button> }
+                    </div>
+                    {country.diaryEntries.map( (entry, index) => {
                         return (
-                            <div id="diaryEntry">
+                            <div key={index} id="diaryEntry">
                                 <div id="spacetimeCotainer">
                                     <p>{entry.location}</p>
                                     <p>{entry.datePosted}</p>
@@ -45,40 +57,41 @@ export default function Diary ( ) {
                             </div>
                         )
                     })}
+                { targetCountry && <button className="backButton endButton" onClick={handleScrollTop}>Scroll To The Top</button> }
+
                 </div>
             )
         }else {
             return (
-                <div id="contentContainer">
-                    {/* <div id="countriesContainer"> */}
-                        <div id="diary-countries">
-                            { countries.map( (country, index) => {
-                                return (
-                                    <div key={index} id={country.name} className='diary-country-container' onClick={handleClick}>
-                                        <h3>{country.name}</h3>
-                                    </div>
-                                )
-                            })}
-                        </div>
+                <div id="diary-countries">
+                    { countries.map( (country, index) => {
+                        return (
+                            <button key={index} id={country.name} className='diaryEntryBt' onClick={handleClick}>
+                                {country.name}
+                            </button>
+                        )
+                    })}
                 </div>
             )
         }
             
     }
 
-    function hanldeClick () {
-        setTargetCountry(false)
-    }
+    
 
     return (
         <div id="diaryPage">
             <div id="diaryPageHeaderImgContainer">
                 <h2 className='diaryPageTitle'>Diaries</h2>
-                <img src={bgImage}/>
+                <div id="bgImgContainer">
+                    <div id="backgroundImageForeground"></div>
+                    <img src={bgImage}/>
+                </div>
+
             </div>
-            { targetCountry && <button className="backButton" onClick={hanldeClick}>Back To Diaries</button> }
-            { switchCountry() }
-            { targetCountry && <button className="backButton endButton" onClick={hanldeClick}>Scrooll To The Top</button> }
+            <div id="diaryContentContainer">
+                { switchCountry() }
+            </div>
         </div>
     )
 }

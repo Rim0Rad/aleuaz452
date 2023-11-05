@@ -219,7 +219,7 @@ const countries = [
         ]
     },
     {
-        name: "ITALY, SLOVAKIA, POLAND, UKRAINA",
+        name: "Italy, Slovakia, Poland, Ukrain",
         diaryEntries: [
             {
                 datePosted: "20.01.2022",
