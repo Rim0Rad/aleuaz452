@@ -26,7 +26,7 @@ export default function Diary ( ) {
         setTargetCountry(false)
     }
     const handleScrollTop = () => {
-        window.scrollTo({top: "100"})
+        window.scrollTo({top: "100", behavior: "smooth"})
     }
 
     useEffect( () => {}, [targetCountry])
@@ -81,14 +81,15 @@ export default function Diary ( ) {
 
     return (
         <div id="diaryPage">
+            
             <div id="diaryPageHeaderImgContainer">
                 <h2 className='diaryPageTitle'>Diaries</h2>
                 <div id="bgImgContainer">
                     <div id="backgroundImageForeground"></div>
                     <img src={bgImage}/>
                 </div>
-
             </div>
+
             <div id="diaryContentContainer">
                 { switchCountry() }
             </div>

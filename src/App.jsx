@@ -1,4 +1,4 @@
-import './style/App.css';
+import './App.css';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
 
@@ -11,6 +11,7 @@ import Adventure from './components/Adventure'
 import Contacts from './components/Contacts.jsx'
 import Questions from './components/Questions.jsx'
 import Map from './components/Map.jsx'
+import AboutMe from './components/AboutMe.jsx'
 
 import travelData from './data/travels.js'
 
@@ -49,16 +50,22 @@ function App() {
         {/* Rest of the page */}
         <Routes>
           <Route path="/" element={<Navigate to="home"/>}/>
-          <Route path="/diary" element={<Diary/>}/>
           <Route path="/home" element={<Home/>}/>
+          <Route path="/diary" element={<Diary/>}/>
           <Route path="/van" element={<Van/>}/>
+
           <Route path='/adventures' element={<Travels/>}/>
-          <Route path='/questions' element={<Questions/>}/>
-          <Route path='/contacts' element={<Contacts/>}/>
-          <Route path='/map' element={<Map/>}/>
           {/* Adventure routes */}
           {createTravelRoutes()
           }
+
+          <Route path='/questions' element={<Questions/>}/>
+          <Route path='/contacts' element={<Contacts/>}/>
+
+          
+          <Route path='/about-me' element={<AboutMe/>}/>
+          
+          <Route path='/map' element={<Map/>}/>
         </Routes>
       </div>
 

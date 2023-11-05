@@ -1,4 +1,3 @@
-
 :root {
   --navbar-height: 100px;
 
@@ -11,26 +10,24 @@
   --accent-color: orangered;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-p, h1, h2, h3, h4 {
+p, h1, h2, h3, h4, button {
   color: white;
 }
-
-
 
 h1 {
   transition: 1s;
   position: absolute;
   z-index: 10;
-  color: white;
   text-shadow: 0 0 20px orangered;
 }
+
 h2 {
+  position: absolute;
+  z-index: 1;
   margin-top: 150px;
+
   font-size: var(--h2-font-size);
+  text-shadow: 0 0 10px black;
 }
 h3 {
   transition: 1s;

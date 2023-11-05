@@ -16,8 +16,13 @@ export default function Travels () {
 
     return (
         <div id="travelsPage">
-            <h2>Aventures</h2>
-            { createTravelCards() }
+            <div className='background'>
+            </div>
+            <h2>Adventures</h2>
+            {/* <img src={bgImg}></img> */}
+            <div id='travelsContentContainer'>
+                { createTravelCards() }
+            </div>
         </div>
     )
 }

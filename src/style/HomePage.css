@@ -1,14 +1,11 @@
 #homepage {
     transition: 1s;
-    /* width: 100%; */
     height: 100vh;
-    /* border: 10px solid black; */
     overflow: hidden;
 }
 
 #homeTop {
     transition: 1s;
-    /* position: absolute; */
     top: 0;
     height: 100%;
     width: 100%;

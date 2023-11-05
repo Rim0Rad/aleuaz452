@@ -7,6 +7,11 @@ import '../style/Contacts.css'
 
 export default function Contacts () {
 
+    // TODO: link social button 
+    // TODO: adjust the sizes to match
+    // TODO: enalbe email sending from the page
+
+
     return (
         <div id="contactsPage">
             <div id="contactsContainer">
