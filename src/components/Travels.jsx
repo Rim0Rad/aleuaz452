@@ -19,7 +19,7 @@ export default function Travels () {
             <div className='background'>
             </div>
             <h2>Adventures</h2>
-            {/* <img src={bgImg}></img> */}
+            
             <div id='travelsContentContainer'>
                 { createTravelCards() }
             </div>

@@ -21,7 +21,7 @@ function App() {
   function createTravelRoutes () {
     const routes = []
     for( let travel in travelData ){
-      routes.push(<Route key={travel} path={travelData[travel].path} element={<Adventure id={travel}/>}></Route>)
+      routes.push(<Route key={travel} path={travelData[travel].path} element={<Adventure id={travel} data={travelData[travel]}/>}></Route>)
     }
     return routes;
   }
@@ -52,6 +52,7 @@ function App() {
           <Route path="/" element={<Navigate to="home"/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/diary" element={<Diary/>}/>
+          <Route path=":lastLocation" element={<Diary/>}/>
           <Route path="/van" element={<Van/>}/>
 
           <Route path='/adventures' element={<Travels/>}/>

@@ -1054,7 +1054,7 @@ const countries = [
         ]
     },
     {
-        name: "Norway",
+        name: "Norway 2023",
         diaryEntries: [
             {
                 datePosted: "08.06.2023",

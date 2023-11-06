@@ -5,23 +5,28 @@ import bgImage  from '../assets/diary_bg_croped.jpg'
 
 // Will retireve this from back end
 import countries from '../data/diary.js'
+import { useParams } from 'react-router-dom';
 
 export default function Diary ( ) {
 
-    // TODO: scroll to to the botom of the header when opening diary entiries
-    // TODO: update the botom button to scroll back to the top
-    // TODO: tome down the orange bacground
-    useEffect( () => {
-    }, [])
-   
+    // TODO: add a button in the diaries to go back to the photo album
+
 
     const [ targetCountry, setTargetCountry ] = useState(false)
 
-
+    // Navigation to the diary entries
+    let { lastLocation } = useParams()
+    useEffect( () => {
+        if(lastLocation){
+            lastLocation = lastLocation.replace("diary:", "")
+            document.getElementById(lastLocation).click()
+        }
+    }, [])
+    
+    
     const handleClick  = (e) => {
         setTargetCountry(e.target.id)
     }
-
     function handleGoBack () {
         setTargetCountry(false)
     }

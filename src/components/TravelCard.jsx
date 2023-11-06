@@ -9,11 +9,14 @@ export default function TravelCard ( { data } ) {
     }
 
     return (
-        <div className="travelCard" 
-            onClick={hanldeClick}
-        >
-            <p>{data.name}</p>
-            <img src={data.cardImage}/>
+        <div id="travelcardContainer">
+
+            <div className="travelCard" 
+                onClick={hanldeClick}
+                >
+                <p>{data.name}</p>
+                <img src={data.cardImage}/>
+            </div>
         </div>
     )
 }

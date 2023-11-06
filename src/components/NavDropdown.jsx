@@ -61,7 +61,6 @@ export default function NavDropdown ( { title, dropdownItems, navId } ) {
         >
             <p className='dropDownButton'>{title}</p>
             { adventureTab && openDropdown()}
-
         </div>
     )
 }

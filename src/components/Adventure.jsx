@@ -1,30 +1,40 @@
-import { useLocation } from "react-router-dom"
-
-import AdventureEntry from './AdventureEntry.jsx'
 
 import '../style/Adventure.css'
-import adventuresData from '../data/adventureData.js'
+import { useLocation, useNavigate } from "react-router-dom"
 
-export default function  Adventure ( { id }) {
 
-    // const {state} = useLocation()
+export default function  Adventure ( { data }) {
 
-    // const adventure = adventuresData[state.id]
-    // TODO: use id to fetch adventure data
-    // useEffect( () => {
-    // }, [])
+    const navigate = useNavigate();
+    const location = useLocation()
 
+    function handleGoBack () {
+        navigate("/adventures")
+    }
+    function handleGotoDiaries() {
+        
+        navigate(`/diary:${data.name}`)
+    }
 
     return (
         <div id="adventurePage">
             <div className="pageHeader">
-                <img  src={adventuresData.tunisia.mainImage}/>
-                <h2>{adventuresData.tunisia.name}</h2>
+                <img  src={data.cardImage}/>
+                <h2>{data.name}</h2>
             </div>
-            <div id="dayContainer">
+            <div id="contentContainer">
+                <button className="backButton" onClick={handleGoBack}>Back To Adventures</button>
+                <button className="backButton" onClick={handleGotoDiaries}>Diaries</button>
+                <div id="photoContainer">
+                    {data.images.map( ( image, index ) => {
+                        return <img key={index} src={image}/>
+                    })}
+                </div>
+                
+                {/*                 
                 { adventuresData.tunisia.entries.map( entry => {
                     return <AdventureEntry data={entry}/>
-                })}
+                })} */}
             </div>
     
         </div>

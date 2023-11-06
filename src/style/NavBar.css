@@ -15,6 +15,7 @@
     
     background-color: var(--nav-color);
     backdrop-filter: blur(4px);
+
 }
 
 #navbar-home {
@@ -37,12 +38,9 @@
     min-height: var(--h3-font-size);
 }
 
-
 .menuDropDown {
     position:absolute;
-    height: auto;
     min-width: 200px;
-
     background-color: var(--nav-color);
 }
 
