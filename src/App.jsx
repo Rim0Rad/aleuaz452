@@ -37,13 +37,13 @@ function App() {
         {/* Navigation bar */}
         { location.pathname === "/home" ? 
             <div id="homeNav">
-              <NavBar id="navbar-home"/>
-              <h1>Alessandro's Van Life</h1>
+              <h1 id="maintitle">Alessandro's Van Life</h1>
+              <NavBar id="navbarBottom"/>
             </div>
             :
             <div id="Nav"> 
+              <h1 id="maintitle">Alessandro's Van Life</h1>
               <NavBar id="navbar"/>
-              <h1>Alessandro's Van Life</h1>
             </div>
         }
 

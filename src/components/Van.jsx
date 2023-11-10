@@ -16,6 +16,9 @@ export default function Van () {
 
     return (
         <div id="vanPage">
+            <div className="backgroundContainer">
+                <img src={bgImage}/>
+            </div>
             <h2>UAZ - SGR Combi Expedition</h2>
             <div id="diagramContainer">
                 <img id="vanImage" src={vanImg}/>

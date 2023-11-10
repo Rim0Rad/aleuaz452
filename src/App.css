@@ -10,15 +10,14 @@
   --accent-color: orangered;
 }
 
-p, h1, h2, h3, h4, button {
-  color: white;
+
+
+* {
+  user-select: none;
 }
 
-h1 {
-  transition: 1s;
-  position: absolute;
-  z-index: 10;
-  text-shadow: 0 0 20px orangered;
+p, h1, h2, h3, h4, button {
+  color: white;
 }
 
 h2 {
@@ -35,16 +34,29 @@ h3 {
   text-shadow: 0 0 5px orangered;
 }
 
+#maintitle{
+  transition: 1s ease-in-out;
+  position: absolute;
+  z-index: 11;
+  margin: 10px 0px 0px 10px;
+
+}
+
 #homeNav > h1 {
   margin: 40vh 100px;
   font-size: var(--h1-font-size);
 }
 
-#Nav > h1 {
-  top: 0;
-  left: 100px;
-  font-size: 30px;
+@media (max-width: 600px){
+  #maintitle {
+    font-size: 15px;
+  }
+  #homeNav > h1 {
+    margin: 40vh 50px;
+    font-size: calc(var(--h1-font-size) - 15px);
+  }
 }
+
 
 .verticalSeparator{
   height: 10px;
@@ -60,3 +72,56 @@ h3 {
   font-size: 20px;
   margin: 0px
 }
+
+
+.backButton{
+  background-color: rgba(255, 68, 0, 0.562);
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  
+}
+
+
+.backButton:hover {
+  background-color: rgba(253, 102, 46, 0.562);
+}
+
+.endButton{
+  margin-bottom: 100px;
+}
+
+
+
+@media (max-width: 600px){
+  .backButton {
+    font-size: 10px;
+    padding: 5px;
+    height: 25px;
+  }
+}
+
+/* Background */
+.backgroundContainer{
+  transition: 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+
+
+.backgroundContainer {
+  background-repeat:no-repeat;
+  background-position:top;
+  background-size:cover;
+}
+
+
+
+

@@ -3,7 +3,7 @@
 
 const countries = [
     {
-        name: "UK",
+        name: "UK 2021",
         diaryEntries: [
             {
                 datePosted: "13.11.2021",
@@ -219,7 +219,7 @@ const countries = [
         ]
     },
     {
-        name: "Italy, Slovakia, Poland, Ukraine",
+        name: "Italy, Slovakia, Poland, Ukraine 2022",
         diaryEntries: [
             {
                 datePosted: "20.01.2022",
@@ -719,7 +719,7 @@ const countries = [
         ]
     },
     {
-        name: "Tunisia",
+        name: "Tunisia 2022",
         diaryEntries: [
             {
                 datePosted: "13.06.2022",
@@ -943,7 +943,7 @@ const countries = [
         ]
     },
     {
-        name: "France",
+        name: "France 2022",
         diaryEntries: [
             {
                 datePosted: "26.10.2022",
@@ -997,7 +997,7 @@ const countries = [
         ]
     },
     {
-        name: "Romania",
+        name: "Romania 2023",
         diaryEntries: [
             {
                 datePosted: "04.01.2023",

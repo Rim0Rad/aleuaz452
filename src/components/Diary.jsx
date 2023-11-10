@@ -13,13 +13,15 @@ export default function Diary ( ) {
 
 
     const [ targetCountry, setTargetCountry ] = useState(false)
+    const [ isBackToAdventure, setIsBackToAdventure ] = useState(false)
 
-    // Navigation to the diary entries
+    // Navigation to the diary entries when coming from adventure page
     let { lastLocation } = useParams()
     useEffect( () => {
         if(lastLocation){
             lastLocation = lastLocation.replace("diary:", "")
             document.getElementById(lastLocation).click()
+            setIsBackToAdventure(true)
         }
     }, [])
     
@@ -46,9 +48,10 @@ export default function Diary ( ) {
         if(country){
             return (
                 <div id="diaryEntries">
-                        <h1>{country.name}</h1>
+                    <h1>{country.name}</h1>
                     <div id="diaryHeader">
                         { targetCountry && <button className="backButton" onClick={handleGoBack}>Back To Diaries</button> }
+                        { isBackToAdventure && <button className="backButton">Back To Adventure</button>}
                     </div>
                     {country.diaryEntries.map( (entry, index) => {
                         return (

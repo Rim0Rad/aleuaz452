@@ -3,16 +3,19 @@ import { useState } from "react"
 
 export default function DiagramButton ( { id, title, data}) {
 
+    const [ isOn, setIsOn ] = useState(false)
+
     const [ vanButtonOn, setVanButtonOn ] = useState(true)
 
     function handleClick(e) {
 
-        const vanButton = document.getElementsByClassName(id)[0]
-        vanButton.classList.add("infoContainer")
+        const vanButton = document.getElementsByClassName("infoContainer")[0]
+        // vanButton.classList.add("infoContainer")
         setVanButtonOn(false)
         for(let key in data){
             vanButton.appendChild(createVanInfoBox(id, data, key))
         }
+        setIsOn(true)
 
     }
 
@@ -40,6 +43,13 @@ export default function DiagramButton ( { id, title, data}) {
                     </div>
                 </div>
             }
+
+            { isOn &&
+            <div id="infoContainerBackdrop">
+                <div className="infoContainer" >
+
+                </div>
+            </div>}
         </div>
     )
 }

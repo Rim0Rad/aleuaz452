@@ -5,7 +5,6 @@ import '../style/Travels.css'
 
 export default function Travels () {
 
-
     function createTravelCards ( ){
         const travels = []
         for(let travel in travelData){
@@ -19,7 +18,7 @@ export default function Travels () {
             <div className='background'>
             </div>
             <h2>Adventures</h2>
-            
+        
             <div id='travelsContentContainer'>
                 { createTravelCards() }
             </div>

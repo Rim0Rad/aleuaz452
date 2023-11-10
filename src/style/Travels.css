@@ -14,46 +14,31 @@
 
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 2;
     justify-content: center;
+    
     padding: 10px;
-
 
 }
 
 #travelcardContainer{
     transition: 0.5s;
-
-    padding: 10px;
+    padding: 10px;    
+    flex-grow: 1;    
 }
-
-.travelCard {
-
-    transition: 0.5s;
-
-    width: fit-content;
-    height: fit-content;
-
-    zoom: 100%;
-    -ms-zoom-animation: default;
-
-
-    overflow:hidden;
-
-    display: flex;
-    justify-content: left;
-
-    position: relative;
-
-
-}
-
 #travelcardContainer:hover {
     transition: 0.5s;
     padding: 5px 0px;
 }
+
+.travelCard {
+    transition: 0.5s;
+    display: flex;
+    flex-grow: 1;
+
+}
 .travelCard:hover{
     transition: 0.5s;
-    /*       t   r     b     l    */
     -webkit-box-shadow:inset 0px 0px 0px 10px rgba(0, 0, 0, 0.116);
     -moz-box-shadow:inset 0px 0px 0px 10px rgba(0, 0, 0, 0.116);
     box-shadow:inset 0px 0px 0px 10px rgba(255, 255, 255, 0.116);
@@ -61,15 +46,16 @@
 
 .travelCard > img {
     transition: 0.5s;
-    height: 300px;
+    max-height: 300px;
     position: static;
     z-index: -1;
     border-radius: 5px;
+    flex-grow: 1;
 
 }
 .travelCard:hover > img{
     transition: 0.5s;
-    height: 310px;
+    max-height: 310px;
 }
 
 .travelCard > p {

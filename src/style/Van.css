@@ -132,8 +132,22 @@
     left: 61%;
 }
 
+
+#infoContainerBackdrop{
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+}
+
 .infoContainer {
-    position:unset;
+    position:sticky;
+    /* top: 25%; */
+    /* left: 30%; */
+
+
 
     z-index: 10;
     

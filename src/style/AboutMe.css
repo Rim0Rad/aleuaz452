@@ -5,13 +5,13 @@
     display: flex;
     justify-content: center;
 }
-#aboutMePage > img {
-    width: 100%;
-    max-height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
+
+#aboutmebg{
+    /* background: url("../assets/aboutMeBg.png"); */
+   
 }
+
+
 #aboutMeContent{
     width: 80%;
     height: 60%;
@@ -19,10 +19,95 @@
 }
 
 #aboutmetxt{
+    transition: 0.5s ease;
     width: 50%;
-    height: 100%;
+    height: fit-content;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.699);
     border-radius: 5px;
-
 }
+
+
+
+@media (max-width: 750px){
+    #aboutmetxt {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+
+@media (min-height: 970px){
+
+    @media (max-aspect-ratio: 1){
+        #aboutmebg {
+            background-position: -800px;
+        }
+    }
+    @media (max-aspect-ratio: 0.8){
+        #aboutmebg {
+            background-position: -900px;
+        }
+    }
+    
+    @media (max-aspect-ratio: 0.5){
+        #aboutmebg {
+            background-position: -1300px;
+        }
+    }
+    @media (max-aspect-ratio: 0.3){
+        #aboutmebg {
+            background-position: -1100px;
+        }
+    }
+  }
+  
+  
+  @media (max-height: 970px){
+  
+    @media (max-aspect-ratio: 1){
+        #aboutmebg {
+            background-position: -400px;
+        }
+    }
+    @media (max-aspect-ratio: 0.8){
+        #aboutmebg {
+            background-position: -600px;
+        }
+    }
+    
+    @media (max-aspect-ratio: 0.5){
+        #aboutmebg {
+            background-position: -800px;
+        }
+    }
+    @media (max-aspect-ratio: 0.3){
+        #aboutmebg {
+            background-position: -1400px;
+        }
+    }
+  }
+  
+  @media (max-height: 500px){
+  
+    @media (max-aspect-ratio: 1){
+        #aboutmebg {
+            background-position: -400px;
+        }
+    }
+    @media (max-aspect-ratio: 0.8){
+        #aboutmebg {
+            background-position: -400px;
+        }
+    }
+    
+    @media (max-aspect-ratio: 0.5){
+        #aboutmebg {
+            background-position: -400px;
+        }
+    }
+    @media (max-aspect-ratio: 0.3){
+        #aboutmebg {
+            background-position: -300px;
+        }
+    }
+  }

@@ -1,19 +1,42 @@
 
+import { useEffect, useState } from 'react';
 import '../style/Adventure.css'
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+
+import diaries from "../data/diary.js"
 
 
 export default function  Adventure ( { data }) {
 
+    // TODO: add filler for when the photos are loading
+    // TODO: add in videos
+
     const navigate = useNavigate();
-    const location = useLocation()
+
+    const [ isDiaryEntry, setIsDiaryEntry ] = useState(false)
+
+
+    // enable got to diary entry button if diary exists
+    useEffect(()=> {
+        if(diaries.find( entry => {
+            return entry.name === data.name
+        })){
+            setIsDiaryEntry(true)
+        }
+    }, [])
 
     function handleGoBack () {
         navigate("/adventures")
     }
     function handleGotoDiaries() {
-        
         navigate(`/diary:${data.name}`)
+    }
+
+    function loadImages () {
+        const imgs = data.images.map( ( image, index ) => {
+            return <img key={index} src={image} />
+        })
+        return imgs;
     }
 
     return (
@@ -24,19 +47,11 @@ export default function  Adventure ( { data }) {
             </div>
             <div id="contentContainer">
                 <button className="backButton" onClick={handleGoBack}>Back To Adventures</button>
-                <button className="backButton" onClick={handleGotoDiaries}>Diaries</button>
+                {isDiaryEntry && <button className="backButton" onClick={handleGotoDiaries}>Diaries</button>}
                 <div id="photoContainer">
-                    {data.images.map( ( image, index ) => {
-                        return <img key={index} src={image}/>
-                    })}
+                    {loadImages()}
                 </div>
-                
-                {/*                 
-                { adventuresData.tunisia.entries.map( entry => {
-                    return <AdventureEntry data={entry}/>
-                })} */}
             </div>
-    
         </div>
     )
 }

@@ -12,6 +12,7 @@ export default function NavDropdown ( { title, dropdownItems, navId } ) {
     useEffect(() => {}, [adventureTab])
 
     const handleMouseEnter = () => {
+        console.log("mouse enter")
         setAdventureTab(true)
     }
     const handleMouseLeave = () => {
@@ -20,11 +21,9 @@ export default function NavDropdown ( { title, dropdownItems, navId } ) {
 
 
     function openDropdown() {
-        if(navId === "navbar-home"){
+        if(navId === "navbarBottom"){
             return (
-                <div id={title} className='menuDropDown'
-                    style={{bottom: "100px"}}
-                >
+                <div id={title} className='menuDropDown dropUp'>
                     { dropdownItems.map(  (item, index) => {
                         return (
                             <p key={index} onClick={ () => {
@@ -37,9 +36,7 @@ export default function NavDropdown ( { title, dropdownItems, navId } ) {
             )
         }else{
             return (
-                <div id={title} className='menuDropDown'
-                    style={{top:"100px"}}
-                >
+                <div id={title} className='menuDropDown'>
                     { dropdownItems.map(  (item, index) => {
                         return (
                             <p key={index} onClick={ () => {
