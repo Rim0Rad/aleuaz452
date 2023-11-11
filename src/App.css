@@ -14,6 +14,7 @@
 
 * {
   user-select: none;
+  transition: 0.3s;
 }
 
 p, h1, h2, h3, h4, button {
@@ -27,12 +28,14 @@ h2 {
 
   font-size: var(--h2-font-size);
   text-shadow: 0 0 10px black;
+  text-align: center;
 }
 h3 {
   transition: 1s;
   font-size: var(--h3-font-size);
   text-shadow: 0 0 5px orangered;
 }
+
 
 #maintitle{
   transition: 1s ease-in-out;
@@ -54,6 +57,10 @@ h3 {
   #homeNav > h1 {
     margin: 40vh 50px;
     font-size: calc(var(--h1-font-size) - 15px);
+  }
+  h2 {
+    font-size: calc(var(--h2-font-size) - 15px);
+    margin-top: 100px;
   }
 }
 
@@ -79,6 +86,7 @@ h3 {
   border: none;
   border-radius: 5px;
   height: 40px;
+  width: fit-content;
 
   font-size: 20px;
   padding: 10px;
@@ -97,6 +105,7 @@ h3 {
 
 
 
+
 @media (max-width: 600px){
   .backButton {
     font-size: 10px;
@@ -110,8 +119,9 @@ h3 {
   transition: 0.5s ease-in-out;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position:fixed;
   z-index: -1;
+  overflow: hidden;
 }
 
 

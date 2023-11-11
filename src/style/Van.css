@@ -1,66 +1,75 @@
 #vanPage {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
+#vanPage > h2 {
+    z-index: 0;
+}
 
 #diagramContainer {
-    position: absolute;
-    top: 200px;
+    margin-top: 200px;
     
     display: flex;
-    flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-self: center;
     
     /* Fixed for the button positions */
-    height: 700px;
     width: 1000px;
+    height: fit-content;
 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.514);
     backdrop-filter: blur(5px);
 }
 
-#diagramContainer:hover > .vanButtonContainer {
-    opacity: 1;
-}
-
 #vanImage {
-    position:absolute;
-    object-fit: cover;
-
+    width: 100%;
 }
+
+#diagramElementContainer{
+    position: absolute;
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+
+    width: 100%;
+    height: 100%;
+}
+
 
 .vanButtonContainer{
     position: absolute;
+    z-index: 9;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     transition: 1s;
-    opacity: 0;
+    opacity: 1;
 
     width: 60px;
     height: 60px;
+
 }
 
 .vanButtonOuter {
-    position:absolute;
-    height: 50px;
     width: 50px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: rgba(0, 0, 0, 0.377);
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.582);
     border-radius: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .vanButtonInner {
@@ -78,7 +87,7 @@
 }
 
 .vanButtonInner > p {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -91,7 +100,7 @@
     width: 50px;
 }
 .vanButtonOuter:hover > .vanButtonInner > p {
-   font-size: 20px;
+   font-size: 15px;
 }
 
 /* Button positions */
@@ -133,26 +142,19 @@
 }
 
 
-#infoContainerBackdrop{
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
+.infoContainerBackdrop{
+    display: flex;
+    justify-content: center;
+    width: 90%;
 }
 
 .infoContainer {
-    position:sticky;
-    /* top: 25%; */
-    /* left: 30%; */
-
-
-
+    position: static;
+    align-self: center;
+    justify-self: center;
     z-index: 10;
     
-    width: fit-content;
-    height: fit-content;
+    width: 90%;
     
     display: flex;
     flex-direction: column;
@@ -162,17 +164,18 @@
     justify-self: baseline;
     align-self: baseline;
 
-    padding: 10px 50px;
+    padding: 10px 25px;
 
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.87);
+    background-color: rgba(0, 0, 0, 0.89);
 }
 .infoBox {
-    /* width: fit-content; */
 
     display: flex;
-    align-items: baseline;
-    padding: 10px;
+    align-items: end;
+    padding: 5px;
+    height: fit-content;
+    min-height: 10px;
 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.151);
@@ -183,6 +186,77 @@
 }
 
 .infoBox > p{
-    margin: 0 50px;
-    white-space: nowrap;
+    margin: 0 25px;
+    padding: 5px 10px;
+    flex: 1;
+    border-bottom: 3px solid rgba(255, 68, 0, 0.178);
+
+}
+
+@media (max-width: 1100px) {
+
+    #diagramContainer {
+        width: 90%;
+    } 
+
+    .vanButtonContainer{
+        width: 40px;
+        height: 40px;
+    }
+    .vanButtonOuter {
+        width: 35px;
+        height: 35px;
+    
+    }
+    .vanButtonInner {
+        height: 30px;
+        width: 30px;
+    }
+    .vanButtonInner > p {
+        font-size: 10px;
+    }
+    .vanButtonOuter:hover {
+        height: 40px;
+        width: 40px;
+    }
+    .vanButtonOuter:hover > .vanButtonInner {
+        height: 35px;
+        width: 35px;
+    }
+    .vanButtonOuter:hover > .vanButtonInner > p {
+       font-size: 12px;
+    }
+
+
+    
+
+    #infoContainerBackdrop{
+        width: 40%;
+        height: 100%;
+    }
+    .infoContainer {
+        margin-top: 200px;
+        margin-bottom: 50px;
+        padding: 2px 5px;
+        width: 80%;
+    }
+    .infoBox {
+        padding: 2px;
+    }
+    .infoBox > p{
+        font-size: 10px;
+        margin: 0 10px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .infoBox > p{
+        margin: 0px;
+        padding: 0 5px;
+        flex: 1;
+        font-size: 10px;
+    }
+    
 }

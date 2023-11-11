@@ -10,24 +10,24 @@
 }
 
 .pageHeader {
-    height: 60%;
+    height: 80vh;
     width: 100vw;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    background-color: black;
 
     object-fit: contain;
     overflow: hidden;
 
 }
 
-.pageHeader > img {
-    max-height: 60%;
-    height: 60vh;
-    z-index: 0;
+#adventurebg {
+    
+    height: 90%;
+    max-height: 80%;
+    background-position:center;
 }
 
 #contentContainer {
@@ -38,6 +38,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#buttonContainer {
+    width: 90%;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.151);
+    display: flex;
+    justify-content: space-around;
 }
 
 #photoContainer{
@@ -59,16 +68,76 @@
 
 }
 
+#imageContainer {
+    flex-grow: 1;
 
-#photoContainer > img {
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+    margin: 5px;
+    border-radius: 5px;
+
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#imageContainer > img {
     transition: 0.5s;
     margin: 1.5px;
     border-radius: 5px;
 
     display: block;
-    flex-grow: 1;
-    max-width: 45%;
-    height: 300px;
-    
+    max-width: 100%;
+    max-height: 400px;
+
     flex-grow: 1;
 }
+
+
+
+
+
+/* interesting flickering effect when scrolling */
+/* #imageContainer {
+    flex-grow: 1;
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+    margin: 5px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imageBackdrop{
+    position:relative;
+    background-color: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(1000px) saturate(150%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index:0;
+    width: 100%;
+    height: 100%;
+}
+
+#imageContainer > #imageBackdrop > img {
+    transition: 0.5s;
+    margin: 1.5px;
+    border-radius: 5px;
+
+    max-width: 100%;
+    max-height: auto;
+
+    max-height: 500px;
+    max-width: 100%;
+    min-width: 200px;
+    opacity: 1;
+} */

@@ -7,7 +7,7 @@ const questionData = [
     },
     {
         question: "Why did you decide to get this perticular van?",
-        answer: "I enjoy to be uncofomfortable when I'm driving and to make my passsengers miserable. Alos, this orange color is very sexy"
+        answer: "I enjoy to be uncomfortable when I'm driving and to make my passsengers miserable. Also, this orange color is very sexy"
     },
 ]
 

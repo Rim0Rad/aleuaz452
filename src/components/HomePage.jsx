@@ -46,7 +46,6 @@ export default function Home () {
 
     const bgStyle = {
         backgroundImage: `url(${bgImage})`,
-        // backgroundPosition: "center"
     }
 
     return (

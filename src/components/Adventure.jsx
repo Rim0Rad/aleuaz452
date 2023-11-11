@@ -4,7 +4,7 @@ import '../style/Adventure.css'
 import { useNavigate } from "react-router-dom"
 
 import diaries from "../data/diary.js"
-
+import bgImage from "../assets/aboutMeBg.png"
 
 export default function  Adventure ( { data }) {
 
@@ -34,20 +34,38 @@ export default function  Adventure ( { data }) {
 
     function loadImages () {
         const imgs = data.images.map( ( image, index ) => {
-            return <img key={index} src={image} />
+            return (
+                // <div id="imageContainer" style={{backgroundImage: `url(${image})`}}>
+                //     <div id="imageBackdrop">
+                //         <img key={index} src={image} />
+                //     </div>
+                // </div>
+                <div id="imageContainer">
+                    <img key={index} src={image} />
+                </div>
+            ) 
+            
         })
         return imgs;
     }
 
+    const bgStyle = {
+        backgroundImage: `url(${data.cardImage})`,
+    }
+
     return (
         <div id="adventurePage">
+
             <div className="pageHeader">
-                <img  src={data.cardImage}/>
+                <div id="adventurebg" className="backgroundContainer" style={bgStyle}></div>
+                {/* <img  src={data.cardImage}/> */}
                 <h2>{data.name}</h2>
             </div>
             <div id="contentContainer">
-                <button className="backButton" onClick={handleGoBack}>Back To Adventures</button>
-                {isDiaryEntry && <button className="backButton" onClick={handleGotoDiaries}>Diaries</button>}
+                <div id="buttonContainer">
+                    <button className="backButton" onClick={handleGoBack}>Back To Adventures</button>
+                    {isDiaryEntry && <button className="backButton" onClick={handleGotoDiaries}>Diaries</button>}
+                </div>
                 <div id="photoContainer">
                     {loadImages()}
                 </div>

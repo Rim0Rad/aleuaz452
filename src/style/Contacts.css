@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     background-color: rgba(0, 0, 0, 0.712);
     border-radius: 5px;
@@ -27,13 +28,11 @@
     align-items: center;
 }
 
-#socialmediaContainer > img {
-    width: 100px;
+#socialmediaContainer > a > img {
     height: 100px;
     margin: 10px
 }
-#socialmediaContainer > img:hover {
-    width: 110px;
+#socialmediaContainer > a > img:hover {
     height: 110px;
     margin: 5px
 }
@@ -97,4 +96,19 @@
 #sendBt:hover {
 
     box-shadow: 0 0 10px orangered;
+}
+
+
+@media (max-width: 600px) {
+    #socialmediaContainer > a > img {
+        /* width: 100px; */
+        height: 40px;
+        margin: 5px
+    }
+
+    #socialmediaContainer > a > img:hover {
+        /* width: 100px; */
+        height: 42px;
+        margin: 4px
+    }
 }

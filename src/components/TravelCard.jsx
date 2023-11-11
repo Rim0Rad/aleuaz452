@@ -8,14 +8,18 @@ export default function TravelCard ( { data } ) {
         navigate("/" + data.path )
     }
 
+    const cardStyle = {
+        backgroundImage: `url(${data.cardImage})`
+    }
+
     return (
         <div id="travelcardContainer">
-
             <div className="travelCard" 
                 onClick={hanldeClick}
+                style={cardStyle}
                 >
                 <p>{data.name}</p>
-                <img src={data.cardImage}/>
+                {/* <img src={data.cardImage}/> */}
             </div>
         </div>
     )

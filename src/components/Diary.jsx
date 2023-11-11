@@ -25,15 +25,22 @@ export default function Diary ( ) {
         }
     }, [])
     
-    
+    // Open target diary
     const handleClick  = (e) => {
+        document.getElementById("diaryContentContainer").style.alignItems = "center";
         setTargetCountry(e.target.id)
     }
+    // go back to the list
     function handleGoBack () {
+        document.getElementById("diaryContentContainer").style.alignItems = "flex-end";
         setTargetCountry(false)
     }
     const handleScrollTop = () => {
-        window.scrollTo({top: "100", behavior: "smooth"})
+        window.scrollTo({top: "0", behavior: "smooth"})
+    }
+    // return to adventure page
+    function handleGoBackToAdventure () {
+        window.history.back()
     }
 
     useEffect( () => {}, [targetCountry])
@@ -46,12 +53,13 @@ export default function Diary ( ) {
         })
         
         if(country){
+            
             return (
                 <div id="diaryEntries">
                     <h1>{country.name}</h1>
                     <div id="diaryHeader">
                         { targetCountry && <button className="backButton" onClick={handleGoBack}>Back To Diaries</button> }
-                        { isBackToAdventure && <button className="backButton">Back To Adventure</button>}
+                        { isBackToAdventure && <button className="backButton" onClick={handleGoBackToAdventure}>Back To Adventure</button>}
                     </div>
                     {country.diaryEntries.map( (entry, index) => {
                         return (
@@ -74,7 +82,11 @@ export default function Diary ( ) {
                 <div id="diary-countries">
                     { countries.map( (country, index) => {
                         return (
-                            <button key={index} id={country.name} className='diaryEntryBt' onClick={handleClick}>
+                            <button key={index} 
+                                id={country.name} 
+                                className='diaryEntryBt' 
+                                onClick={handleClick}
+                            >
                                 {country.name}
                             </button>
                         )

@@ -11,13 +11,16 @@ import DiagramButton from "./DiagramButton"
 export default function Van () {
 
     useEffect( () => {
-    })
+    },[])
 
+    const bgStyle = {
+        backgroundImage: `url(${bgImage})`,
+    }
 
     return (
         <div id="vanPage">
-            <div className="backgroundContainer">
-                <img src={bgImage}/>
+            <div className="backgroundContainer" style={bgStyle}>
+                {/* <img src={bgImage}/> */}
             </div>
             <h2>UAZ - SGR Combi Expedition</h2>
             <div id="diagramContainer">
@@ -31,7 +34,7 @@ export default function Van () {
                 <DiagramButton id="tiresButton" title="Tires" data={vanInfo.Wheels}/>
                 <DiagramButton id="fuelButton" title="Fuel" data={vanInfo.Fuel}/>
                 <DiagramButton id="speedButton" title="Speed" data={vanInfo.Speed}/>
-                <DiagramButton id="modificationButton" title="Modifications" data={vanInfo.Modifications}/>
+                {/* <DiagramButton id="modificationButton" title="Modifications" data={vanInfo.Modifications}/> */}
             </div>
         </div>
     )

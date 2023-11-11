@@ -2,6 +2,7 @@ import TravelCard from './TravelCard.jsx'
 import travelData from '../data/travels.js'
 
 import '../style/Travels.css'
+import bgImage from '../assets/gallery_bg.jpg'
 
 export default function Travels () {
 
@@ -13,9 +14,13 @@ export default function Travels () {
         return travels
     }
 
+    const bgStyle = {
+        backgroundImage: `url(${bgImage})`,
+    }
+
     return (
         <div id="travelsPage">
-            <div className='background'>
+            <div id="travelPageBg" className='backgroundContainer' style={bgStyle}>
             </div>
             <h2>Adventures</h2>
         
